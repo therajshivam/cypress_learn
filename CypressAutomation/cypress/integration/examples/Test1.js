@@ -15,7 +15,7 @@ describe('First Test Suit', function () {
         // test steps
         // open a website
         cy.visit("https://rahulshettyacademy.com/seleniumPractise/#/");
-        cy.get
+        cy.get('`z')
     })
 } )   
 
