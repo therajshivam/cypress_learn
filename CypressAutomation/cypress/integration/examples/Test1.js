@@ -30,8 +30,6 @@ describe('First Test Suit', function () {
                 cy.wrap($el).find('button').click()
             }
         }) 
-
-        
     })
 
     // fixtures
