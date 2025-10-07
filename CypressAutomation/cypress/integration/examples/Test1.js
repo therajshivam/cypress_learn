@@ -33,7 +33,16 @@ describe('First Test Suit', function () {
             }
         })  
 
-        
+        // promise resolution
+        // const logo = cy.get('.brand')
+        // cy.log(logo.text())
+
+        cy.get('.brand').then(function(logoelement){
+            cy.log(logoelement.text())
+        })
+
+
+         
     })
 
     // fixtures
