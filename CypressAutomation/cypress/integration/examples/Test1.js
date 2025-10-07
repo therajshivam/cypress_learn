@@ -29,9 +29,11 @@ describe('First Test Suit', function () {
         cy.get('.products').find('.product').each(($el, index, $list) => {
             const textVeg = $el.find('h4.product-name').text()
             if (textVeg.includes('Cashews')) {
-                cy.wrap($el).find('button').click()
+                cy.wrap($el).find('button').click() // resolve promise using wrap
             }
         })  
+
+        
     })
 
     // fixtures
