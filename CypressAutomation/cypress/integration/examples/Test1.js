@@ -20,9 +20,10 @@ describe('First Test Suit', function () {
         // selenium get hit url in browser, cypress get acts like findElement of selenium
         cy.get('.product').should('have.length',5);
         cy.get('.product:visible').should('have.length',4);
+
         // parent child chaining
         cy.get('.products').find('.product').should('have.length',4)
-        // cy.get('.products').find('.product').eq(2).contains('ADD TO CART').click()
+        cy.get('.products').find('.product').eq(2).contains('ADD TO CART').click()
 
         // Dynamically
         // Iterate over an array of DOM elements
@@ -41,8 +42,12 @@ describe('First Test Suit', function () {
             cy.log(logoelement.text())
         })
 
+        // alias : declaraing a var
+        cy.get('.products').as('productLocator')
+        cy.get('@productLocator').find('.product').eq(2).contains('ADD TO CART').click()
 
-         
+        // diff bw log and console log
+        
     })
 
     // fixtures
