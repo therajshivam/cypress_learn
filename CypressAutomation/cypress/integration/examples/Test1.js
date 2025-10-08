@@ -46,6 +46,7 @@ describe('First Test Suit', function () {
         cy.get('.products').as('productLocator')
         cy.get('@productLocator').find('.product').eq(2).contains('ADD TO CART').click()
 
+        
         // diff bw log and console log
 
 
