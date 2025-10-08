@@ -47,6 +47,20 @@ describe('First Test Suit', function () {
         cy.get('@productLocator').find('.product').eq(2).contains('ADD TO CART').click()
 
         // diff bw log and console log
+        // console.log prints in browser log as it is a js command, it should be use in .then block else it can execute on its own without async
+        // .log is a cypress command hence it prints in cypress test runner, it can directly use as a method
+        console.log('sf')
+
+        // assert if logo text is correctly displayed
+        cy.get('.brand').should('have.text', 'GREENKART')
+
+        // this is to print in logs
+        cy.get('.brand').then(function(logoelement){
+            cy.log(logoelement.text())
+        })
+
+        
+
 
     })
 
