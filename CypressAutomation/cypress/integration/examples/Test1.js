@@ -59,13 +59,9 @@ describe('First Test Suit', function () {
             cy.log(logoelement.text())
         })
 
-        
-
-
     })
 
     // fixtures
-
 
 } )   
 
