@@ -35,8 +35,19 @@ describe('Third Test Suit', function(){
         })
         cy.get('#autocomplete').should('have.value', 'India')
 
-        // 4. visible and invisible elements
+        // 4. visible and invisible elements using assertion
+        cy.get('#displayed-text').should('be.visible')
+
+        cy.get('#hide-textbox').click()
+        cy.get('#displayed-text').should('not.be.visible')
+
+        cy.get('#show-textbox').click()
+        cy.get('#displayed-text').should('be.visible')
+
+
+        // 5. radio button
         
+
 
 
     })
