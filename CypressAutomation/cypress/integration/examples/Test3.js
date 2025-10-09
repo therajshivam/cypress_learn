@@ -48,5 +48,6 @@ describe('Third Test Suit', function(){
         // 5. radio button
         cy.get('[value="radio2"]').check().should('be.checked')
 
+        
     })
 })
