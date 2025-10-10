@@ -9,5 +9,6 @@ describe('Fourth Test Suit', function(){
         // cypress auto handles the pop up, no need to write any code
         // two types of pop ups : normal popups with ok button and confirm with ok or cancel popup
 
+        
     })
 })
