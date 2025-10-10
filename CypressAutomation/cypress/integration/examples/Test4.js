@@ -10,9 +10,5 @@ describe('Fourth Test Suit', function(){
         // two types of pop ups : normal popups with ok button and confirm with ok or cancel popup
 
 
-
-
-        
-
     })
 })
