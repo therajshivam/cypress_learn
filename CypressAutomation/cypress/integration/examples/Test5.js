@@ -1,9 +1,11 @@
 /// <reference types="Cypress" />
 
-// 
+// Handling child tab with combination of cypress and jQuery
 
-describe('Fourth Test Suit', function(){
-    it('Fourth Test Case', function(){
+describe('Handling Child Windows', function(){
+    it('Should Handle Child Window', function(){
+
+        
 
     })
 })
