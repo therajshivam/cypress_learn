@@ -1,6 +1,6 @@
 /// <reference types="Cypress" />
 
-// Handling web control ui
+// Handling alerts and popups
 
 describe('Fourth Test Suit', function(){
     it('Fourth Test Case', function(){
