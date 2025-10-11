@@ -5,6 +5,7 @@
 describe('Handling Child Windows', function(){
     it('Should Handle Child Window', function(){
 
+        cy.visit('https://rahulshettyacademy.com/AutomationPractice/')
         
 
     })
