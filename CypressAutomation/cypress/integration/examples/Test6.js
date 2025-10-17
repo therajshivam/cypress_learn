@@ -8,6 +8,7 @@ describe('Handling Web tables', function(){
         cy.visit('https://rahulshettyacademy.com/AutomationPractice/')
         
         
+        
 
 
     })
