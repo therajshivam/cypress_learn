@@ -20,8 +20,6 @@ describe('Handling Frames', function(){
 
         cy.iframe().find("h1[class*='pricing-title']").should('have.length', 2)
 
-
-
     })
 })
  
