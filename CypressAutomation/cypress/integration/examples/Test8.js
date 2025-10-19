@@ -1,6 +1,6 @@
 /// <reference types="Cypress" />
 
-// 8. Handling Child Windows
+// 10. Handling Child Windows
 
 describe('Handling Child Windows', function(){
     it('Should Handle Child Windows', function(){

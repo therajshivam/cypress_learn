@@ -1,6 +1,6 @@
 /// <reference types="Cypress" />
 
-// 8. Handling Mouse Hover Pop-ups 
+// 9. Handling Mouse Hover Pop-ups 
 
 describe('Handling Mouse Hover Pop-ups', function(){
     it('Should Handle Mouse Hover Pop-ups', function(){
