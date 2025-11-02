@@ -1,13 +1,20 @@
 /// <reference types="Cypress" />
 
 describe('E2E Framework E-commerce Test', () => {
+
+    before(function () {
+        // runs once before all the tests in this block
+        cy.fixture('example').then(function(data){
+            this.data=data
+        })
+    })
+
     it('Submit Order', function () {
 
-        const productName = "Nokia Edge"
-
+        const productName = this.data.productName
         cy.visit('https://rahulshettyacademy.com/loginpagePractise/')
-        cy.get('#username').type('rahulshettyacademy')
-        cy.get('#password').type('learning')
+        cy.get('#username').type(this.data.username)
+        cy.get('#password').type(this.data.password)
         cy.contains("Sign In").click()
 
         cy.contains("Shop Name").should("be.visible")
