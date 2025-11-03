@@ -11,6 +11,9 @@ describe('E2E Framework E-commerce Test', () => {
 
     it('Submit Order', function () {
 
+        // test specific timeout change
+        Cypress.config('defaultCommandTimeout', 10000)
+
         const productName = this.data.productName
         cy.visit('https://rahulshettyacademy.com/loginpagePractise/')
         cy.get('#username').type(this.data.username)
@@ -40,6 +43,8 @@ describe('E2E Framework E-commerce Test', () => {
     })
     cy.contains('button', 'Checkout').click()
 
+    // Changing timeout for a Specific Command
+    Cypress.config('defaultCommandTimeout', 10000)
     cy.get('#country').type('India')
     cy.wait(5000)
     cy.get('.suggestions ul li').click()
