@@ -9,24 +9,15 @@ cypress/screenshots/
 cypress/downloads/
 cypress/results/
 cypress.env.json
-cypress/e2e/1-getting-started/*
-cypress/e2e/2-advanced-examples/*
 
 # IDE specific files
 .idea/
 .vscode/
 *.swp
 *.swo
-*.sublime-project
-*.sublime-workspace
 
 # OS generated files
 .DS_Store
-.DS_Store?
-._*
-.Spotlight-V100
-.Trashes
-ehthumbs.db
 Thumbs.db
 
 # Logs
@@ -35,7 +26,6 @@ logs
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
-lerna-debug.log*
 
 # Environment variables
 .env
@@ -47,15 +37,7 @@ lerna-debug.log*
 
 # Test coverage and reports
 coverage/
-reports/
-results/
-mochawesome-report/
-cypress/reports/
-cypress/screenshots/
 
-# Debug
-debug.log
-.debug
 
 # Optional npm cache directory
 .npm
@@ -66,4 +48,3 @@ debug.log
 # Build output
 dist/
 build/
-public/dist/
