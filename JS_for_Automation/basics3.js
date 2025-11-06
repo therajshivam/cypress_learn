@@ -65,3 +65,18 @@ console.log(totalval);
 var scores1 = [12, 13,14, 16]
 let finalValue = scores1.filter(score=>score%2==0).map(score=>score*3).reduce((sum,value)=> sum + value, 0)
 console.log(finalValue);
+
+
+// sorting an array
+// strings
+let fruits = ["banana", "mango", "apple", "pineapple"]
+console.log(fruits.sort());
+console.log(fruits.reverse());
+
+// integers
+let scoresObtained = [12, 3, 19, 16, 13]
+// scores.sort(function (a,b) {
+//     return a - b
+// })
+console.log(scoresObtained.sort((a,b)=> a-b));
+console.log(scoresObtained.sort((a,b)=> b-a));
