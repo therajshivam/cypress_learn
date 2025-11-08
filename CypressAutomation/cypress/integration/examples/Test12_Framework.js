@@ -17,6 +17,8 @@ describe("E2E Framework E-commerce Test", () => {
 
     const productName = this.data.productName;
 
+    cy.log(this.data.username)
+
     this.homePage.goTo("https://rahulshettyacademy.com/loginpagePractise/");
     const productPage = this.homePage.login(
       this.data.username,
