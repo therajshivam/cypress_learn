@@ -1,3 +1,5 @@
+const Person = require('./basics7')
+
 // strings
 let day = 'tuesday '
 console.log(day.length);
@@ -30,3 +32,6 @@ while (value!== -1) {
 }
 console.log(count);
 
+let person = new Person("Chris", "Edward")
+
+console.log(person.fullName());
