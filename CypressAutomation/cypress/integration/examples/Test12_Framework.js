@@ -1,56 +1,42 @@
 /// <reference types="Cypress" />
 
-describe('E2E Framework E-commerce Test', () => {
+import HomePage from "../../support/pageObjects/HomePage";
 
-    before(function () {
-        // runs once before all the tests in this block
-        cy.fixture('example').then(function(data){
-            this.data=data
-        })
+describe("E2E Framework E-commerce Test", () => {
+  before(function () {
+    // runs once before all the tests in this block
+    cy.fixture("example").then(function (data) {
+      this.data = data;
+      this.homePage = new HomePage();
+    });
+  });
+
+  it("Submit Order", function () {
+    // test specific timeout change
+    Cypress.config("defaultCommandTimeout", 10000);
+
+    const productName = this.data.productName;
+
+    this.homePage.goTo("https://rahulshettyacademy.com/loginpagePractise/");
+    const productPage = this.homePage.login(
+      this.data.username,
+      this.data.password
+    );
+
+    productPage.pageValidation();
+    productPage.getCardCount().should('have.length', 4)
+    productPage.selectProduct(productName);
+    productPage.selectFirstProduct();
+    const cartPage = productPage.goToCart();
+
+    cartPage.sumOfProducts().then(function(sum)
+    {
+        expect(sum).to.be.lessThan(200000);
     })
+    const confirmationPage = cartPage.checkoutItems()
 
-    it('Submit Order', function () {
-
-        // test specific timeout change
-        Cypress.config('defaultCommandTimeout', 10000)
-
-        const productName = this.data.productName
-        cy.visit('https://rahulshettyacademy.com/loginpagePractise/')
-        cy.get('#username').type(this.data.username)
-        cy.get('#password').type(this.data.password)
-        cy.contains("Sign In").click()
-
-        cy.contains("Shop Name").should("be.visible")
-        cy.get('app-card').should('have.length', 4)
-
-        cy.get('app-card').filter(`:contains("${productName}")`)
-        .then($element => {
-            cy.wrap($element).should('have.length', 1)
-            cy.wrap($element).contains('button', 'Add').click()
-        })
-         cy.get('app-card').eq(0).contains('button', 'Add').click()
-         cy.contains('a', 'Checkout').click()
-
-        let sum = 0
-         cy.get('tr td:nth-child(4) strong')
-    .each($e1=>{
-        // ₹. 65000
-        const amount = Number($e1.text().split(" ")[1].trim())
-        sum = sum + amount // 65000 + 100000
-
-    }).then(function () {
-        expect(sum).to.be.lessThan(200000)
-    })
-    cy.contains('button', 'Checkout').click()
-
-    // Changing timeout for a Specific Command
-    Cypress.config('defaultCommandTimeout', 10000)
-    cy.get('#country').type('India')
-    cy.wait(5000)
-    cy.get('.suggestions ul li').click()
-    cy.get('.btn-success').click()
-
-    cy.get('.alert-success').should('contain', 'Success')
-
-    })
+    confirmationPage.submitFormDetails()
+    confirmationPage.getAlertMessage().should("contain", "Success")
+    
+  });
 });
