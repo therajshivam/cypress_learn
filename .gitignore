@@ -4,11 +4,11 @@ package-lock.json
 yarn.lock
 
 # Cypress specific
-cypress/videos/
-cypress/screenshots/
-cypress/downloads/
-cypress/results/
-cypress.env.json
+# cypress/videos/
+# cypress/screenshots/
+# cypress/downloads/
+# cypress/results/
+# cypress.env.json
 
 # IDE specific files
 .idea/

@@ -12,7 +12,7 @@ describe('Handling Child Windows', function(){
 
         // Step 2: Get the URL from the window opener button
         // Using jQuery's .prop() method to get the 'href' property value
-        cy.get('#openwindow').then(function(el){
+        cy.get('#opentab').then(function(el){
             // Extract URL from the element
             const url = el.prop('href')
             // Step 3: Navigate to the extracted URL

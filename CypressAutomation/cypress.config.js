@@ -9,11 +9,19 @@ module.exports = defineConfig({
   env: {
     url : "https://rahulshettyacademy.com"
   },
+
+  projectId: "akitc5",
+
+  retries: {
+    runMode: 1, 
+},
+
   e2e: {
     setupNodeEvents(on, config) {
       // implement node event listeners here
       require('cypress-mochawesome-reporter/plugin')(on);
     },
+
     specPattern: "cypress/integration/examples/*.js",
   },
 });
