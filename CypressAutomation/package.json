@@ -5,10 +5,16 @@
   "scripts": {
     "test": "npx cypress run",
     "HeadTest": "npx cypress run --headed",
-    "recordDashboardTest" : "npx cypress run --record --key 2a20db61-de5b-465f-a693-24bdbb3b1bd1 ",
-    "chromeTest" : "npx cypress run --browser chrome",
-    "GreenKartTest" : "npx cypress run --spec \"cypress/integration/GreenKart/*\"     ",
-    "SmokeTest" : "npx cypress run --spec \"cypress/integration/GreenKart/Test1.js\" "
+    "recordDashboardTest": "npx cypress run --record --key 2a20db61-de5b-465f-a693-24bdbb3b1bd1 ",
+    "chromeTest": "npx cypress run --browser chrome",
+    "GreenKartTest": "npx cypress run --spec \"cypress/integration/GreenKart/*\"     ",
+    "SmokeTest": "npx cypress run --spec \"cypress/integration/GreenKart/Test1.js\" "
+  },
+  "cypress-cucumber-preprocessor": {
+    "json": {
+      "enabled": true,
+      "output": "cypress/cucumberReports/results.json"
+    }
   },
   "author": "",
   "license": "ISC",
@@ -16,6 +22,11 @@
   "devDependencies": {
     "cypress": "^15.1.0",
     "cypress-iframe": "^1.0.1",
-    "cypress-mochawesome-reporter": "^4.0.2"
+    "cypress-mochawesome-reporter": "^4.0.2",
+    "multiple-cucumber-html-reporter": "^3.9.3"
+  },
+  "dependencies": {
+    "@badeball/cypress-cucumber-preprocessor": "^23.2.1",
+    "@cypress/browserify-preprocessor": "latest"
   }
 }

@@ -1,4 +1,24 @@
 const { defineConfig } = require("Cypress");
+const { addCucumberPreprocessorPlugin } = require("@badeball/cypress-cucumber-preprocessor");
+const browserify = require("@cypress/browserify-preprocessor");
+const {
+  preprendTransformerToOptions,
+} = require("@badeball/cypress-cucumber-preprocessor/browserify");
+
+async function setupNodeEvents(on, config) {
+  // implement node event listeners here
+      require('cypress-mochawesome-reporter/plugin')(on);
+
+      await addCucumberPreprocessorPlugin(on, config);
+
+  on(
+    "file:preprocessor",
+    browserify(preprendTransformerToOptions(config, browserify.defaultOptions)),
+  );
+
+  // Make sure to return the config object as it might have been modified by the plugin.
+  return config;
+}
 
 module.exports = defineConfig({
   // global timeout change
@@ -17,11 +37,11 @@ module.exports = defineConfig({
 },
 
   e2e: {
-    setupNodeEvents(on, config) {
-      // implement node event listeners here
-      require('cypress-mochawesome-reporter/plugin')(on);
-    },
+    setupNodeEvents,
 
-    specPattern: "cypress/integration/*/*.js",
+    // specPattern: "cypress/integration/*/*.js",
+    specPattern: "cypress/integration/examples/BDD/*.feature",
   },
 });
+
+// message -> JSON file -> HTML

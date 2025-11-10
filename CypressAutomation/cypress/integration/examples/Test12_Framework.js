@@ -19,25 +19,21 @@ describe("E2E Framework E-commerce Test", () => {
 
     cy.log(this.data.username)
 
-
     this.homePage.goTo(Cypress.env('url')+ "/loginpagePractise/");
-    const productPage = this.homePage.login(
-      this.data.username,
-      this.data.password
-    );
 
+    const productPage = this.homePage.login(this.data.username, this.data.password);
     productPage.pageValidation();
     productPage.getCardCount().should('have.length', 4)
     productPage.selectProduct(productName);
     productPage.selectFirstProduct();
-    const cartPage = productPage.goToCart();
 
+    const cartPage = productPage.goToCart();
     cartPage.sumOfProducts().then(function(sum)
     {
         expect(sum).to.be.lessThan(200000);
     })
-    const confirmationPage = cartPage.checkoutItems()
 
+    const confirmationPage = cartPage.checkoutItems()
     confirmationPage.submitFormDetails()
     confirmationPage.getAlertMessage().should("contain", "Success")
     
