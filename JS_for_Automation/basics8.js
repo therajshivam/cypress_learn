@@ -20,6 +20,3 @@ class Pet extends Person {
 }
 
 new Pet("sam", "san")
-pet.fullName()
-
-
