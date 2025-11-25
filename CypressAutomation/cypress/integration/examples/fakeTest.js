@@ -1,5 +1,6 @@
 /// <reference types="Cypress" />
 
+//  understood the Power of using CYpress in testing both Web (Front end) + API/XHR (Back End calls) for testing Edge case Scenarios .
 // to mock response
 
 describe("Api Test", function () {
