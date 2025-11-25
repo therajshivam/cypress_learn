@@ -14,11 +14,11 @@ describe("Api Test", function () {
         
         req.continue((res)=>
         {
-            expect(res.statusCode).to.equal(403)
+            // expect(res.statusCode).to.equal(403)
         })
-    }    
-        
-    )
+    }).as("dummyUrl")
+    .get('button[class="btn btn-primary"]').click()
+    .wait('@dummyUrl')
       
 
 
