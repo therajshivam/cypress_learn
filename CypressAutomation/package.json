@@ -20,10 +20,11 @@
   "license": "ISC",
   "description": "",
   "devDependencies": {
-    "cypress": "^15.1.0",
+    "cypress": "^15.7.0",
     "cypress-iframe": "^1.0.1",
     "cypress-mochawesome-reporter": "^4.0.2",
-    "multiple-cucumber-html-reporter": "^3.9.3"
+    "multiple-cucumber-html-reporter": "^3.9.3",
+    "neat-csv": "5.1.0"
   },
   "dependencies": {
     "@badeball/cypress-cucumber-preprocessor": "^23.2.1",
