@@ -38,7 +38,7 @@ module.exports = defineConfig({
 
   e2e: {
     setupNodeEvents,
-
+    experimentalStudio: true,
     specPattern: "cypress/integration/examples/*.js",
     // specPattern: "cypress/integration/examples/BDD/*.feature",
   },
