@@ -3,26 +3,28 @@
 ## Cypress Introduction
 
 **What is Cypress?**  
-Cypress is a next generation frontend automation testing tool build for the mordern web application.
+Cypress is a JavaScript-based end-to-end testing framework that runs directly inside the browser to automate testing of modern web applications.
 
 **How Cypress is Unique from other automation tools?**
 
-- Cypress automatically waits for commands and assertations before moving on. No more async hell.  
-  Ex: If a link button is disabled. And get clickable after few seconds. Cypress wait to check for it to get enabled to check.  
-  Default timeout is of 4 seconds. But it can be manually increase or decrease.
+1. **Automatic Waiting:** Cypress automatically waits for commands and assertations before moving on. No more async hell.  
+   Ex: If a link button is disabled. And get clickable after few seconds. Cypress wait to check for it to get enabled to check.  
+   Default timeout is of 4 seconds. But it can be manually increase or decrease. Cypress retries commands, not just waits.
 
-- Ability to test edge test cases by mocking the server response.
+2. **Mocking Server Response:** Ability to test edge test cases by mocking the server response.
 
-- Cypress takes snapshot as the tests run.
+3. **Snapshot:** Cypress takes snapshot as the tests run.
 
-- Because of it architecture design, Cypress delivers fast, consistent and reliable test execution compared to other Automation tools.
+4. **Faster Execution:** Cypress executes test code inside the browser instead of communicating with it over a remote driver, making execution faster and more reliable.
 
-- View video of the entire tests execution when run from the Cypress Dashboard.
+5. View video of the entire tests execution when run from the Cypress Dashboard.
 
 **_Few things:_**  
-Cypress is built on Node.js and comes packed as an npm module.  
-As it is built on Node.js, it uses Javascript for writing test cases. But 90% of code is cypress inbuilt commands.  
-Cypress also bundles with jQuery and inherits many of its methods for UI components identification.
+Cypress is built on Node.js and comes packed as an npm module.
+
+As it is built on Node.js, it uses Javascript for writing test cases. But cypress provides hundreds of built-in commands that reduce the amount of JavaScript developers need to write.
+
+Cypress also bundles with jQuery and inherits many of its methods for UI components identification. Many Cypress commands behave similarly to jQuery selectors.
 
 ## Cypress Architecture
 
@@ -37,9 +39,10 @@ Cypress open doors to New Kind of testing (unit testing, integration test, e2e t
 **Cypress Browser Support**
 
 - Chrome
+- Chromium
 - Electron
 - Firefox
-- IE
+- Edge
 
 **Cypress Components**
 
