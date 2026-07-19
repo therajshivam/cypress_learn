@@ -1,1 +1,2 @@
-# cypress_learn
+# Cypress Learning Repo
+Includes codes and notes.
