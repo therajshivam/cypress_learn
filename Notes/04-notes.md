@@ -40,6 +40,8 @@ To select only visible elements:
 cy.get('.product:visible')
 ```
 
+`:visible`: jQuery pseudo selector
+
 ---
 
 Code:
@@ -56,21 +58,21 @@ describe("My first test suite", function () {
 
     // cy.get('.product').should('have.length', 4)
     // failed because there were total 5 elements in which 1 was hidden.
-    
+
     // Handling invisible elements.
     cy.get('.product:visible').should('have.length', 4)
   });
 });
 ```
 
-- `cy.visit('url')` : navigating to URL / opens website.
+- `cy.visit()` : Opens a webpage.
 
-- `cy.get('.classname')` : to get the locator present on webpage.
+- `cy.get()` : Finds element(s) using a CSS selector.
 
-- `.type('ca')` : to type something.
+- `.type()` : Types into an input field.
 
-- `.should('have.length', 4)` : assertion to verify length as how many such item present.
+- `.should()` : Verifies an expected condition.
 
-- `cy.wait(2000)` : will wait for 2 seconds.
+- `cy.wait()` : Pauses test execution for a specified time.
 
-- `cy.get('.product:visible')` : retrieves/ captures only visible elements
+- `:visible` : Selects only visible elements.
