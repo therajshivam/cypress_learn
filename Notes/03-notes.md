@@ -56,7 +56,7 @@ describe('My First Test', () => {
 
 `describe`: It is the test suite. All the testcases should go inside this.
 
-`it`: It is the testcase. We write here test steps. We can create different `it` blocks to write different testcases. All the test steps should go inside it.  
+`it`: It is the testcase. We write here test steps. We can create different `it` blocks to write different testcases. All the test steps should go inside it.
 
 `Test1.js`
 
@@ -73,9 +73,9 @@ describe("My first test suite", function () {
 
 ## Write First Test
 
-`cy` is a global command which will help to invoke any cypress command.  
+`cy` is a global command which will help to invoke any cypress command.
 
-`.visit("url")` is a method which navigate a url.  
+`.visit("url")` is a method which navigate a url.
 
 ```Javascript
 describe("My first test suite", function () {
@@ -104,14 +104,32 @@ Two modes to run cypress tests :
 `npx cypress run --browser chrome` changing browser in headless.
 
 ## Project Structure
-1. `cypress/fixtures`: Folder to store test data(excel, xml or json). Test data should not be hardcoded. We can get data from fixture folder using `fixture` command.  
 
-2. `cypress/integration/examples`: `integration` folder, here all the tests written.
+1.  `cypress/fixtures`: Folder to store test data(excel, xml or json). Test data should not be hardcoded. Access fixture data using `cy.fixture()`.
 
-3. `cypress/plugins`: Plugins are like listeners. What to do before the event is happening or what after event happened. onBrowserInvoke. Not suggested to use.
+2.  `cypress/e2e`: Contains all End-to-End (E2E) test files (spec files).  
+    Older Cypress versions used `cypress/integration`.
 
-4. `cypress/support`: Write here customised commands. These are reusable methods. Write a utility and place that method so all test cases use these method.
+3.  `cypress/support`: Contains reusable code shared across tests.
+    - `command.js`: Custom Cypress commands.
+    - `e2e.js`: Global setup executed before every spec (imports commands, global hooks, configuration).
 
-5. `node_modules`: Created when npm install cypress will install.
+4.  `node_modules`: ontains all installed npm packages, including Cypress.
 
-6. `cypress.config.js`: Auto generated file when open cypress test runner. It is config file for entire framework. Set properties for how the entire cypress test sould behave. There is an `e2e` object to store properties. We can override project setting default properties through this.
+5.  `cypress.config.js`: Auto generated file when open cypress test runner.  
+    The main configuration file for the Cypress project. Used to configure settings such as:
+    - Spec file location
+    - Base URL
+    - Viewport size
+    - Timeouts
+    - Screenshots & videos
+    - Environment variables
+    - Node event listeners (`setupNodeEvents()`)
+
+
+        Set properties for how the entire cypress test sould behave. There is an `e2e` object to store properties. We can override project setting default properties through this.
+
+> Legacy (Pre Cypress 10)
+>
+> - `cypress/integration` → Renamed to `cypress/e2e`
+> - `cypress/plugins` → Removed. Plugin functionality is now handled inside `setupNodeEvents()` in `cypress.config.js`.   
