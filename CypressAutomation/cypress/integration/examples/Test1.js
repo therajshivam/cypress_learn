@@ -23,6 +23,7 @@ describe("My first test suite", function () {
 
 
     cy.get('.products').find('.product')
+    
   });
 });
 
