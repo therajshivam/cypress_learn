@@ -29,13 +29,23 @@ describe("My first test suite", function () {
     // task : get all the products with the text, only if it is Cashews, then add to the cart.
     cy.get('.products').find('.product')
     .each(($el, index, $list) => {
+
       const textVeg = $el.find('h4.product-name').text()
+      
       if(textVeg.includes('Cashew')) {
         cy.wrap($el).find('button').click()
       }
     }) 
 
 
+
+
+
+
+
+
+
+    
 
   });
 });
