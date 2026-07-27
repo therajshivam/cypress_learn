@@ -37,6 +37,9 @@ describe("My first test suite", function () {
       }
     }) 
 
+    cy.fixture()
+
+    
 
   });
 });
