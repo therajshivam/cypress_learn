@@ -1,12 +1,9 @@
 // IntelliSense
 /// <reference types="Cypress" / 
 
-
-// Cypress Spec
 describe("My second test suite", function () {
   it("My second testcase", function () {
 
-    // Write Test Steps Here
     cy.visit("https://rahulshettyacademy.com/seleniumPractise/#/");
     cy.get('.search-keyword').type('ca')
     cy.get('.products').as('productLocator')
@@ -23,7 +20,5 @@ describe("My second test suite", function () {
     cy.contains('PROCEED TO CHECKOUT').click()
     cy.contains('Place Order').click()
 
-
   });
 });
-
