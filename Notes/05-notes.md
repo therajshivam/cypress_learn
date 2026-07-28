@@ -20,7 +20,7 @@
 
 ## `.each( )` - Iterate through an array
 
-`cy.get('.products').find('.product')` - this will returns an array.
+`cy.get('.products').find('.product')` - yields a jQuery collection of elements (array-like), which `.each()` iterates over.
 
 `.each()` loops through every element yielded by the previous Cypress command. It takes a callback function.
 
@@ -76,7 +76,9 @@ This is why explicit Promise handling is usually not required.
 
 - **Pending** → Operation is still running.
 - **Fulfilled (Resolved)** → Operation completed successfully.
-- **Rejected** → Operation failed.
+- **Rejected** → Operation failed.   
+
+Cypress commands return Chainables, not native JavaScript Promises. Cypress internally manages asynchronous execution.
 
 
 ### `.then()`
@@ -96,3 +98,5 @@ cy.get('.product').then(($products) => {
 Here, `.then()` waits until `cy.get()` finishes before executing the callback.
 
 
+
+## JQuery Methods vs Cypress Commands
