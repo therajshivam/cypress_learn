@@ -16,10 +16,10 @@ describe('e2e ecommerce testing', () => {
         // validate/check 4 product carts on the page 
         cy.get('app-card').should('have.length', 4)
 
-        // select product dynamically
+        // select product dynamically using .filter()
         const productName = 'Nokia Edge'
-        
-        
+        cy.get('app-card').filter(':contains(productName)')
+
 
     })
 })
