@@ -18,6 +18,8 @@ describe('ikea india website testing', ()=>{
 
         // sign up
         cy.get('#signup').click()
+
+        
          
     })
 })
