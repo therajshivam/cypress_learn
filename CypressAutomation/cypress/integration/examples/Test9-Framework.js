@@ -17,6 +17,7 @@ describe("e2e ecommerce testing", () => {
     // 1. login page
     // const homepage = new HomePage() // object
     this.homepage.navigate("https://rahulshettyacademy.com/loginpagePractise/");
+    // cy.log(this.data.username) // inspect - outputs in the log
     const productpage = this.homepage.login(
       this.data.username,
       this.data.password,
@@ -28,6 +29,8 @@ describe("e2e ecommerce testing", () => {
     productpage.selectProduct(productName);
     productpage.selectFirstProduct();
     const cartpage = productpage.navigateToCart();
+
+    // cy.pause() // for debugging - pause the test and wait for user input to continue; when issue fixed remove it
 
     // 3. cart page
     cartpage.sumOfProducts().then(function (sum) {
