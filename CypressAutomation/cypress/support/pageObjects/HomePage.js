@@ -1,0 +1,17 @@
+import ProductPage from "./ProductPage";
+
+class HomePage {
+
+navigate(url){
+    cy.visit(url)
+}
+
+login(username, password){
+    cy.get("#username").type(username);
+    cy.get("#password").type(password);
+    cy.contains("Sign In").click();
+    return new ProductPage() // next page object (ProductPage)
+}
+}
+
+export default HomePage;

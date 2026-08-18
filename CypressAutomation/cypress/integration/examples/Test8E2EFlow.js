@@ -52,8 +52,8 @@ describe("e2e ecommerce testing", () => {
     // 4. purchase page
 
     // dropdown country selection
+    Cypress.config("defaultCommandTimeout", 10000); // only override the timeout after this line of code
     cy.get('#country').type('India')
-    cy.wait(5000)
     cy.get('.suggestions ul li a').should('be.visible').click() // selects the first suggestion from the dropdown
     cy.get('.btn-success').click()
 
