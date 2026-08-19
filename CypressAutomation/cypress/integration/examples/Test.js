@@ -14,7 +14,7 @@ describe('ikea india website testing', ()=>{
         cy.get('.hnf-navbar__profile-link').click()
 
         // wait 
-        cy.wait(30000)
+        // cy.wait(30000)
 
         // sign up
         cy.get('#signup').click()
