@@ -16,7 +16,7 @@ describe("e2e ecommerce testing", () => {
 
     // 1. login page
     // const homepage = new HomePage() // object
-    this.homepage.navigate("https://rahulshettyacademy.com/loginpagePractise/");
+    this.homepage.navigate(Cypress.env('url')+"loginpagePractise/");
     // cy.log(this.data.username) // inspect - outputs in the log
     const productpage = this.homepage.login(
       this.data.username,
