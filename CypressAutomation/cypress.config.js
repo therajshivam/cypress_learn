@@ -1,5 +1,26 @@
 const { defineConfig } = require("cypress");
 
+const createBundler = require("@bahmutov/cypress-esbuild-preprocessor");
+const {
+  addCucumberPreprocessorPlugin,
+} = require("@badeball/cypress-cucumber-preprocessor");
+const {
+  createEsbuildPlugin,
+} = require("@badeball/cypress-cucumber-preprocessor/esbuild");
+
+async function setupNodeEvents(on, config) {
+  await addCucumberPreprocessorPlugin(on, config);
+
+  on(
+    "file:preprocessor",
+    createBundler({
+      plugins: [createEsbuildPlugin(config)],
+    })
+  );
+
+  return config;
+}
+
 module.exports = defineConfig({
   projectId: "tkn1df", // for cypress cloud
   defaultCommandTimeout: 6000, // change timeout for entire framework by overidding the default 4 sec.
@@ -14,11 +35,14 @@ module.exports = defineConfig({
   },
 
   e2e: {
-    setupNodeEvents(on, config) {
-      // implement node event listeners here
-      require('cypress-mochawesome-reporter/plugin')(on);
-    },
-    specPattern: 'cypress/integration/examples/*.js'
+    // setupNodeEvents(on, config) {
+    //   // implement node event listeners here
+    //   require('cypress-mochawesome-reporter/plugin')(on);
+    // },
+
+    setupNodeEvents,
+    specPattern: 'cypress/integration/examples/*.js',
+    specPattern: 'cypress/integration/examples/BDD/*.feature'
   },
 });
 

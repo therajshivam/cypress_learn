@@ -1,4 +1,4 @@
-/// <reference types="Cypress" />
+/// <reference types="cypress" />
 
 import HomePage from "../../support/pageObjects/HomePage";
 
