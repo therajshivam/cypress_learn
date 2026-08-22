@@ -12,6 +12,12 @@ When("I login to the application", function () {
   this.productpage.getCardCount().should("have.length", 4);
 });
 
+When("I login to the application portal", function(dataTable){
+  this.productpage = homePage.login(dataTable.rawTable[1][0], dataTable.rawTable[1][1]);
+  this.productpage.pageValidation();
+  this.productpage.getCardCount().should("have.length", 4);
+})
+
 When("I add items to Cart and checkout", function () {
   this.productpage.selectProduct(this.data.productName);
   this.productpage.selectFirstProduct();
@@ -29,3 +35,4 @@ Then("select the country submit and verify Thankyou", function () {
   confirmationpage.submitFormDetails();
   confirmationpage.getAlertMessage().should("contain", "Success");
 });
+
