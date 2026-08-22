@@ -42,5 +42,6 @@ describe("e2e ecommerce testing", () => {
     // 4. purchase page
     confirmationpage.submitFormDetails()
     confirmationpage.getAlertMessage().should("contain", "Success");
+     
   });
 });
